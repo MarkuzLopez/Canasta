@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="es" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Formularios</title>
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/materialize.css">
+</head>
+<body ng-controller="Controller">
+<br>
+   <div class="container">
+   	 <div class="row">
+   	     <div class="col s12">   	    	 	 	 		
+		 	 	<div class="card border">
+		 	 		<div class="card-content">
+		 	 		  <div align="center">
+		 	 		  	  <img src="img/6702.png" style="width: 30%; height: 30%;">
+		 	 		  </div>
+		 	 		  <br><br>		
+
+		 	 			<form>
+         				<div class="row">
+          					<div class="input-field col s6">
+          					<input type="text" ng-model="folio" required>
+          					<label for="folio"> <font size="5">FOLIO</font> </label>
+         					  </div>
+
+          					<div class="input-field col s6">            				
+            				<input type="text" ng-model="curp" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required>
+            				<label for="curp"><font size="5">CURP: </font></label>
+          					</div>
+
+        			  </div>  
+
+       				 <div class="row">
+          				<div class="input-field col s6">
+            			<input type="text" ng-model="beneficiario" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required>
+            			<label for="beneficiario"><font size="5">BENEFICIARIO: </font></label>
+          				</div>          
+          				<div class="input-field col s6">
+            			<input type="text" ng-model="cobeneficiario" style="text-transform: uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required>
+            			<label for="cobeneficiario"> <font size="5">COBENEFICIARIO: </font></label>
+          				</div>                    
+        			</div>
+
+          		<div class="row">          
+          				<div class="input-field col s6">
+            			<input type="text" ng-model="referencia" style="text-transform: uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required>
+            			<label for="referencia"><font size="5">REFERENCIA DE DONDE VIVE</font>: </label>
+            			</div>
+
+           			<div class=" col s6">
+			             <select name="comunidad" ng-model="comunidad">
+                    <option value="">Selecione una opcion</option>
+                    <option ng-repeat="dato in datos" value="{{dato.id}}">{{dato.nombre}}</option>
+                   </select>
+           			</div>
+          		</div>                
+                    
+         		<div align="right">
+						 <button class="btn waves-effect waves-light" type="submit" ng-click="agregar(folio,curp,beneficiario,cobeneficiario, referencia,comunidad)">
+						 REGISTRAR USUARIO<span class="icon-add-user" style="margin-left: 15px; font-size: 20px;"></span>    		
+  						 </button>
+				</div>	
+       	 		</form>         	
+		 	</div>
+		   </div>		 	 
+   	 	</div>
+   	 </div>
+   </div>
+
+
+	<script type="text/javascript" src="js/angular.min.js"></script>
+  <script src="app/appDatos.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/materialize.min.js"></script> 
+</body>
+</html>
